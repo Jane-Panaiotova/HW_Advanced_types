@@ -150,13 +150,17 @@ foo1 = lambda x, y: x if x < y else y
 # 19*. Convert (8) to regular function
 # foo = lambda x, y, z: z if y < x and x > z else y
 
+x = 2
+y = 3
+z = 6
+
 def foo2(x, y, z):
-    if y < x:
-        return z
-    elif x > z:
+    if y < x and x > z:
         return z
     else:
         return y
+print(foo2(x,y, z))
+
 
 #20. Sort lst_to_sort from min to max
 lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
@@ -171,7 +175,7 @@ print(lst_to_sort2)
 
 #22. Use map and lambda to update the lst_to_sort by multiply each element by 2
 lst_to_sort = [5, 18, 1, 24, 33, 15, 13, 55]
-lst_to_sort3 = list(map(lambda x: x ** 2, lst_to_sort))
+lst_to_sort3 = list(map(lambda x: x * 2, lst_to_sort))
 print(lst_to_sort3)
 
 #23*. Raise each list number to the corresponding number on another list:
